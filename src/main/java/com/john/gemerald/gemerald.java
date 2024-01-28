@@ -2,6 +2,7 @@ package com.john.gemerald;
 
 import com.john.gemerald.Items.ModItems;
 import com.john.gemerald.blocks.ModBlocks;
+import com.john.gemerald.entity.EntityClass;
 import com.john.gemerald.handlers.EventHandler;
 import com.john.gemerald.handlers.FuelHandler;
 import com.john.gemerald.handlers.OreGen;
@@ -9,7 +10,6 @@ import com.john.gemerald.recipes.ModRecipes;
 import com.myname.mymodid.Tags;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,19 +23,25 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 @Mod(modid = gemerald.MODID, version = Tags.VERSION, name = "gemerald", acceptedMinecraftVersions = "[1.7.10]")
 public class gemerald {
 
+
     public static final String MODID = "gemerald";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     @SidedProxy(clientSide = "com.john.gemerald.ClientProxy", serverSide = "com.john.gemerald.CommonProxy")
     public static CommonProxy proxy;
 
+    @Mod.Instance(gemerald.MODID)
+    public static gemerald modInstance;
+
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
+        proxy.registerRenderThings();
         FMLCommonHandler.instance().bus().register(new EventHandler());
         ModItems.init();
         ModBlocks.init();
+        EntityClass.init();
         GameRegistry.registerFuelHandler(new FuelHandler());
         ModRecipes.init();
         GameRegistry.registerWorldGenerator(new OreGen(), 0);
