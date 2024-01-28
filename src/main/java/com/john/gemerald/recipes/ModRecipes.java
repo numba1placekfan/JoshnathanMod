@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 public class ModRecipes {
 
     public static void init() {
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.soyringe), Items.wheat_seeds, ModItems.empty_syringe);
         GameRegistry.addRecipe(new ItemStack(ModBlocks.josh_block, 1, 0), new Object[]{"XXX", "XXX", "XXX", 'X', ModItems.josh_ingot});
         GameRegistry.addSmelting(ModBlocks.coalerald_ore, new ItemStack(ModItems.coal_gem), 0.7F);
         GameRegistry.addSmelting(ModBlocks.josh_ore, new ItemStack(ModItems.josh_ingot), 0.7F);
