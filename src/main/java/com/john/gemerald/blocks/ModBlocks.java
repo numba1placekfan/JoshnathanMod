@@ -1,5 +1,6 @@
 package com.john.gemerald.blocks;
 
+import com.john.gemerald.blocks.decor.JamesCube;
 import com.john.gemerald.blocks.decor.JoshBlock;
 import com.john.gemerald.blocks.ores.CoaleraldOre;
 import com.john.gemerald.blocks.ores.JoshOre;
@@ -9,7 +10,7 @@ public class ModBlocks {
 
     public static Block coalerald_ore;
     public static Block josh_block;
-    public static Block josh_slab;
+    public static Block james_cube;
     public static Block josh_ore;
 
 
@@ -18,6 +19,7 @@ public class ModBlocks {
         coalerald_ore = new CoaleraldOre();
         josh_block = new JoshBlock();
         josh_ore = new JoshOre();
+        james_cube = new JamesCube();
 
     }
 }
