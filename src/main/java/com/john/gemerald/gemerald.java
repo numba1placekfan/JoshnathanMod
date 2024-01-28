@@ -2,11 +2,14 @@ package com.john.gemerald;
 
 import com.john.gemerald.Items.ModItems;
 import com.john.gemerald.blocks.ModBlocks;
+import com.john.gemerald.handlers.EventHandler;
 import com.john.gemerald.handlers.FuelHandler;
 import com.john.gemerald.handlers.OreGen;
 import com.john.gemerald.recipes.ModRecipes;
 import com.myname.mymodid.Tags;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,6 +33,7 @@ public class gemerald {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
+        FMLCommonHandler.instance().bus().register(new EventHandler());
         ModItems.init();
         ModBlocks.init();
         GameRegistry.registerFuelHandler(new FuelHandler());

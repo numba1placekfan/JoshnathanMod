@@ -1,6 +1,8 @@
 item.coal_gem.name=Coalerald
 item.tangerinerald.name=Tangerinerald
 item.josh_ingot.name=Josh Ingot
+item.empty_syringe.name=Empty Syringe
+item.soyringe.name=Soyringe
 
 tile.coalerald_ore.name=Coalerald Ore
 tile.josh_block.name=Josh
