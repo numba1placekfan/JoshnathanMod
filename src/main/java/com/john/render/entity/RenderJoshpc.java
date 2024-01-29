@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderJoshpc extends RenderLiving
 {
     private static final ResourceLocation mobTextures = new ResourceLocation(gemerald.MODID + ":textures/entity/cat.png");
-    private static final String __OBFID = "CL_00000984";
+
 
     public RenderJoshpc(ModelBase p_i1253_1_, float p_i1253_2_)
     {
