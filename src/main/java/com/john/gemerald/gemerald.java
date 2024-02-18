@@ -37,13 +37,12 @@ public class gemerald {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        proxy.registerRenderThings();
         FMLCommonHandler.instance().bus().register(new EventHandler());
         ModItems.init();
         ModBlocks.init();
         EntityClass.init();
         GameRegistry.registerFuelHandler(new FuelHandler());
-        ModRecipes.init();
+
         GameRegistry.registerWorldGenerator(new OreGen(), 0);
         proxy.preInit(event);
     }
@@ -51,6 +50,8 @@ public class gemerald {
     @Mod.EventHandler
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
+        ModRecipes.init();
+        proxy.registerRenderThings();
         proxy.init(event);
     }
 

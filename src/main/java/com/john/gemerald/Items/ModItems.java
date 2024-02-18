@@ -16,6 +16,7 @@ public class ModItems
     public static Item josh_ingot;
     public static Item empty_syringe;
     public static Item soyringe;
+    public static Item cd;
 
     public static void init()
     {
